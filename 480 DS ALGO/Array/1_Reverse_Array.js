@@ -27,4 +27,4 @@ input = "some string";
   console.log(arr);
 })(input);
 
-// space: O(n) && time : O(n)
+// space: O(n) && time : O(1)
