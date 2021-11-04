@@ -1,5 +1,7 @@
 const input = [2, 5, 22, 75, 44, 100];
 
+// 1.
+
 const swap = (a, b) => [b, a];
 
 const partition = (arr = [], low = 0, high = arr.length) => {
@@ -28,12 +30,12 @@ const KthElement = (arr = [], k, left = 0, right = arr.length - 1) => {
 
 const driverCode = (input, k) => {
   const result = KthElement(input, k);
-  const sortArray = input.sort((a, b) => a - b);
   /* for demonstration */
+  const sortArray = input.sort((a, b) => a - b);
   console.log("Sorted Array : ", sortArray);
   console.log("Result suppose to get : ", sortArray[k - 1]);
-  console.log("Result what we get : ", result);
   /* --- ------------- */
+  console.log("Result what we get : ", result);
 };
 
 driverCode(input, 4);
