@@ -7,10 +7,10 @@
 
 // !year%400 || !year%4 && year%100
 
-((year)=>{
-    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
-        console.log(year + ' is a leap year');
-    } else {
-        console.log(year + ' is not a leap year');
-    }
-})(2000);
+((year) => {
+  if ((0 == year % 4 && 0 != year % 100) || 0 == year % 400) {
+    console.log(year + " is a leap year");
+  } else {
+    console.log(year + " is not a leap year");
+  }
+})(2014);

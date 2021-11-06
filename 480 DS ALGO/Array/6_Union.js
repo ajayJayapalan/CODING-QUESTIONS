@@ -1,5 +1,12 @@
 // Union of 2 array
 
+/* 
+
+    time = O(n+m);
+    space = O(n+m);
+
+*/
+
 const union = (arr1 = [], arr2 = []) => {
   const hashMap = {};
 
@@ -24,7 +31,7 @@ const union = (arr1 = [], arr2 = []) => {
     }
   }
 
-  console.log(newArr);
+  console.log(hashMap);
 };
 
 union([85, 25, 1, 32, 32, 54, 6], [86, 25, 4, 30, 54]);
