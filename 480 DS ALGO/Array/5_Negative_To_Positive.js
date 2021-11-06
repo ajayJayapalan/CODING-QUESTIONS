@@ -1,8 +1,10 @@
 // Move all negative numbers to beginning and positive to end with constant extra space
 
 /* 
+
     time : O(n)
     space : O(1)
+
 */
 
 const swap = (e1, e2) => [e2, e1];
