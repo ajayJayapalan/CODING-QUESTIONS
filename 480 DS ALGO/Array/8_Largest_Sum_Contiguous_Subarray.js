@@ -23,6 +23,12 @@ const getSumOfSubArray = (arr) => {
 getSumOfSubArray([-1, -2, -3, -4]);
 
 // Kadane algorithm
+/* 
+
+  time: O(n)
+  space: O(1)
+
+*/
 const getSumOfSubArray2 = (arr) => {
   let maxSum = arr[0];
   let sum = 0;
