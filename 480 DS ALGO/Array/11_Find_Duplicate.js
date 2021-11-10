@@ -2,6 +2,13 @@
 
 There is only one repeated number in nums, return this repeated number. */
 
+/* 
+
+  time: O(n)
+  space: O(1)
+
+*/
+
 const findDup = (arr = []) => {
   let sumOfNPlusOne = 0;
   let n = arr.length - 1;

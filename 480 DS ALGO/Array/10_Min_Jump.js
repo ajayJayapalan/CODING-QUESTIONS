@@ -3,7 +3,7 @@ Given an array of N integers arr[] where each element represents the max number 
 Note: Return -1 if you can't reach the end of the array.
 */
 
-// Dynamic Programming
+// 1. Dynamic Programming
 /* 
 
   time: O(n^2)
@@ -29,3 +29,5 @@ const getJumps = (arr = [], n = arr.length) => {
 };
 
 console.log(getJumps([0, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]));
+
+// 2.
