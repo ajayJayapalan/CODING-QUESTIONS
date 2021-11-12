@@ -31,3 +31,4 @@ const getJumps = (arr = [], n = arr.length) => {
 console.log(getJumps([0, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]));
 
 // 2.
+
