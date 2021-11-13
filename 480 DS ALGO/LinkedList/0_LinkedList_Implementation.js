@@ -122,47 +122,48 @@ class LinkedList {
     let node2 = node1.next.next;
     node1.next = node2;
     this.length--;
-    console.log(node1, node2);
     return;
   }
 
   // lookup
   lookup(index) {
     let node = this._getNodeAtIndex(index);
-    console.log(node.value);
     return node.value;
   }
 
   // traverse
   traverse() {
     let node = this.head;
+    let arr = [];
     while (true) {
-      console.log(node.value);
+      arr.push(node.value);
       node = node.next;
       if (node?.next === null) {
-        console.log(node.value);
-        return;
+        arr.push(node.value);
+        return arr;
       }
     }
   }
 }
 
-const myLinkedList = new LinkedList(10);
-myLinkedList.append(20);
-myLinkedList.append(30);
-myLinkedList.append(40);
-myLinkedList.append(50);
-myLinkedList.prepend(00);
-myLinkedList.prepend(05);
-// myLinkedList.lookup(6);
+// const myLinkedList = new LinkedList(10);
+// myLinkedList.append(20);
+// myLinkedList.append(30);
+// myLinkedList.append(40);
+// myLinkedList.append(50);
+// myLinkedList.prepend(00);
+// myLinkedList.prepend(05);
+// // myLinkedList.lookup(6);
+// // myLinkedList.traverse();
+// myLinkedList.insert(2, 2);
+// console.log("===length===", myLinkedList.length);
+// myLinkedList.insert(2, myLinkedList.length - 1);
+// // console.log(myLinkedList);
 // myLinkedList.traverse();
-myLinkedList.insert(2, 2);
-console.log("===length===", myLinkedList.length);
-myLinkedList.insert(2, myLinkedList.length - 1);
 // console.log(myLinkedList);
-myLinkedList.traverse();
-console.log(myLinkedList);
-console.log("-----------------------------");
-myLinkedList.delete(myLinkedList.length - 2);
-myLinkedList.traverse();
-console.log(myLinkedList);
+// console.log("-----------------------------");
+// myLinkedList.delete(myLinkedList.length - 2);
+// myLinkedList.traverse();
+// console.log(myLinkedList);
+
+module.exports = LinkedList;
