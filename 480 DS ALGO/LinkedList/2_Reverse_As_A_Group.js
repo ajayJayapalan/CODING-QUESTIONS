@@ -75,4 +75,5 @@ chain.append(8);
 chain.append(9);
 chain.append(10);
 chain.append(11);
+
 displayAsArray(reverseByGroup(chain.head, 3));
