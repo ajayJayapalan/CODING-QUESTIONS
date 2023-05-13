@@ -11,9 +11,9 @@
 
 class Node {
   constructor(value) {
+    this.data = value;
     this.left = null;
     this.right = null;
-    this.data = value;
   }
 }
 
@@ -50,27 +50,56 @@ class BST {
     }
   }
 
-  remove(value) {
-    const temp = this.root;
-    while (temp.left !== null || temp.right !== null) {
-      if (temp.data === value) {
-        temp = temp.left;
-        return this;
+  _findNode(value) {
+    let temp = this.root;
+    let parentPointer = this.root;
+
+    while (temp.data !== value) {
+      if (!temp.left && !temp.right) {
+        console.log("returning..", temp.data);
+        return { temp: null, parentPointer: null };
       }
+
       if (temp.data > value) {
         if (temp.left === null) {
-          break;
+          return { temp: null, parentPointer: null };
         }
+
+        parentPointer = temp;
         temp = temp.left;
       } else {
         if (temp.right === null) {
-          break;
+          return { temp: null, parentPointer: null };
+
         }
+        parentPointer = temp;
         temp = temp.right;
       }
     }
 
-    return "Value not present";
+    return { temp, parentPointer };
+  }
+
+  _findReplaceableNode(node) {
+    if (!node.left && !node.right) return node;
+    if (!node.left && node.right) return node.right;
+    if (node.left && !node.left.right) return node.left;
+    let temp = node.left;
+
+    while (temp.right !== null) {
+      temp = temp.right;
+    }
+
+    return temp;
+  }
+
+  remove(value) {
+    const { temp, parentPointer } = this._findNode(value);
+    console.log("===temp, parentPointer===", temp, parentPointer);
+    if (!temp && !parentPointer) return;
+
+    const node = this._findReplaceableNode(temp);
+    console.log("===replaceable-node===", node);
   }
 
   traverse(node = this.root) {
@@ -89,8 +118,8 @@ myTree.insert(20);
 myTree.insert(170);
 myTree.insert(15);
 myTree.insert(1);
-myTree.remove(20);
-console.log("===myTree===", JSON.stringify(myTree, null, 2));
+console.log("===myTree===", JSON.stringify(myTree, null, 10));
+myTree.remove(9);
 // console.log(JSON.stringify(myTree.traverse(), null, 2));
 
 // 9 4 6 20 170 15 1
