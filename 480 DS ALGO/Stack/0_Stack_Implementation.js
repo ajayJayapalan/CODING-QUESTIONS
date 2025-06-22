@@ -1,5 +1,5 @@
 // Implementing Stack using Array
-class StackWithArray {
+export class StackWithArray {
   constructor() {
     this.top = null;
     this.nodes = [];
@@ -20,6 +20,9 @@ class StackWithArray {
     this.length--;
     this.top = this.nodes[this.length - 1];
     return temp;
+  }
+  isEmpty() {
+    return this.length === 0;
   }
 }
 
